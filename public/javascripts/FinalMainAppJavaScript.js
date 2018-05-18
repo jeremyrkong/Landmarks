@@ -17,7 +17,7 @@
  * [Infobox for when you click on one of the placemarkers]
  * @param {[string]} marker  [the marker where you will be creating the info box]
  * @param {[string]} message [the description of the landmark]
- */        
+ */
         function addInfoWindow(marker, message) {
 
             var infoWindow = new google.maps.InfoWindow({
@@ -32,7 +32,7 @@
 /**
  *[Uses AJAX to grab your location from the googlemaps API then runs the functions]
  * @return {[none]} [Does not return anything]
- */            
+ */
         function loadDoc(){ // Load up the API and place everything on the map properly
             var newlocation = document.getElementById('SearchBar').value;
             var xhttp = new XMLHttpRequest();
@@ -48,7 +48,7 @@
             xhttp.open("GET","https://maps.googleapis.com/maps/api/place/textsearch/json?query=point+of+interest+in+"+encodeURIComponent(newlocation)+"&key=AIzaSyA5XukOn9Ji2Bl-BEFw9l-UJl2D4TaLDhM", true);
             xhttp.send();
     }
-        
+
         /*--------------------------Finding and Placing Landmarks on the map------------------------------*/
 /**
  *[Does everything, places the markers, finds the pictures and places them in the box, centers the map to the new location]
@@ -70,10 +70,11 @@
                 return landmarks}
 
                 
-                //Finding each Latitude and longitude of each location to use as markers
+            //Finding each Latitude and longitude of each location to use as markers
                 
                 
             function getLocations(landmarks){   
+
                 var locations = []
                 for (var i =0; i < landmarks.length; i++){
                     locations.push({lat: landmarks[i].latitude, lng: landmarks[i].longitude})
@@ -185,9 +186,35 @@
                     map: map
                 });
                 addInfoWindow(marker,"<p><b>" + landmarks[i].name + "</b></p><p>"+landmarks[i].address+"</p>")
-            }
+            };
         };
+/**
+ * [A function that checks if an entry is already in a users saved locations. returns a boolean value
+ * where it will be passed to another function to add or deny the entry.]
+ * @param  {[string]} entry [the entry that you are trying to add into the list]
+ * @param  {[list]} list  [a list of the locations the user has saved to their database]
+ * @return {[boolean]}       [returns true or false depending on if the entry is in the list already]
+ */
+function check(entry, list) {
+  if (list == null) {
+    return true
+  } else {
+      for (i=0; i<list.length;i++){
+        if (entry == list[i]) {
+          return true
+        }
+      }
+      return false
+    };
+};
 
-        document.getElementById('searchbutton').addEventListener('click', function() {
-           loadDoc();
-       });
+module.exports = {
+  initMap,
+  addInfoWindow,
+  loadDoc,
+  getLandmarks,
+  check
+}
+        //  document.getElementById('searchbutton').addEventListener('click', function() {
+        //     loadDoc();
+        // });
