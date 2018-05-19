@@ -4,7 +4,9 @@ html(lang='en')
         title Welcome
         link(rel='stylesheet', href='/stylesheets/bootstrap.css')
         link(rel='stylesheet', href='/stylesheets/style.css')
-    body
+        link(href="https://fonts.googleapis.com/css?family=Lato|Montserrat", rel="stylesheet")
+
+    body#overlay
         .navbar.navbar-default(role='navigation')
             .container
                 .navbar-header
@@ -17,7 +19,7 @@ html(lang='en')
                     ul.nav.navbar-nav
                         if user 
                             li(class=(title=='Members' ? 'active' : ''))
-                                a(href='/') Members
+                                a(href='/') Main Page
                         if !user
                             li(class=(title=='Register' ? 'active' : ''))
                                 a(href='/users/register') Register
@@ -27,6 +29,7 @@ html(lang='en')
                         if user
                             li
                                 a(href='/users/logout') Logout    
+        
         .container 
             != messages()
             block content
