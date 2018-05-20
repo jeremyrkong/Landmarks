@@ -5,10 +5,13 @@ block content
   body(style = 'background-image: url(http://www.leger.co.uk/blog/wp-content/uploads/2016/02/eiffel-tower-1576.jpg);background-size: cover')
     .countryselect
       input#countrysearch(type='text', placeholder='Enter a country or city')
-      button#searchbutton(onclick= "loadDoc()") Search
+      button#searchbutton Search
       button#savedshow Show landmarks
     #map
     #countrypic
+    #countrypicoptions
+      #forwardarrow
+      #backwardarrow
       #countryinfo
         h2#title1.infotitle
         button#save1.save Save

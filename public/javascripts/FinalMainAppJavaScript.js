@@ -1,5 +1,6 @@
 /*-------------------------MAP FUNCTIONS---------------------------------*/
-
+var itr=0;
+var globalLandmarks = []
 
         /**
  * [initializes the google map]
@@ -34,7 +35,7 @@
  * @return {[none]} [Does not return anything]
  */
         function loadDoc(){ // Load up the API and place everything on the map properly
-            var newlocation = document.getElementById('SearchBar').value;
+            var newlocation = document.getElementById('countrysearch').value;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function(){
                 if (this.readyState == 4 && this.status == 200) {
@@ -47,6 +48,7 @@
         };
             xhttp.open("GET","https://maps.googleapis.com/maps/api/place/textsearch/json?query=point+of+interest+in+"+encodeURIComponent(newlocation)+"&key=AIzaSyA5XukOn9Ji2Bl-BEFw9l-UJl2D4TaLDhM", true);
             xhttp.send();
+            return newlandmarks
     }
 
         /*--------------------------Finding and Placing Landmarks on the map------------------------------*/
@@ -67,7 +69,8 @@
                     photo: Results[i].photos
                 });
                 };
-                return landmarks}
+                return landmarks
+            }
 
                 
             //Finding each Latitude and longitude of each location to use as markers
@@ -208,6 +211,25 @@ function check(entry, list) {
     };
 };
 
+function changeImage(num,landmarks){
+    document.getElementById('countrypic').style.backgroundImage = "url(https://maps.googleapis.com/maps/api/place/photo?maxheight=1600&photoreference" + landmarks[num].photo[0].photo_reference + "&key=AIzaSyA5XukOn9Ji2Bl-BEFw9l-UJl2D4TaLDhM)";
+    document.getElementById('title1').innerHTML= landmarks[num].name;
+  }
+document.getElementById("forwardarrow").addEventListener("click",function(){
+  if (itr == 0) {
+      changeImage(itr, globalLandmarks);
+  } else if (itr>0) {
+      changeImage(itr+=1, globalLandmarks);
+  }
+});
+document.getElementById("backwardarrow").addEventListener("click",function(){
+  if (itr ==0) {
+      changeImage(itr, globalLandmarks);
+  } else if (itr>0){
+      changeImage(itr-=1, globalLandmarks);
+  }
+});
+
 module.exports = {
   initMap,
   addInfoWindow,
@@ -215,6 +237,7 @@ module.exports = {
   getLandmarks,
   check
 }
-        //  document.getElementById('searchbutton').addEventListener('click', function() {
-        //     loadDoc();
-        // });
+ document.getElementById('searchbutton').addEventListener('click', function() {
+    loadDoc();
+    globalLandmarks = loadDoc();
+ });
