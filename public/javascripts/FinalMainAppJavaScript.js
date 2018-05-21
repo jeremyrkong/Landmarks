@@ -212,12 +212,13 @@ function check(entry, list) {
     };
 };
 
-
+//function that initializes image gallery and changes images based on arrow click
 function changeImage(num,landmarks){
-    console.log(landmarks[0]);
     document.getElementById('countrypic').style.backgroundImage = "url(https://maps.googleapis.com/maps/api/place/photo?maxheight=1600&photoreference=" + landmarks[num].photo + "&key=AIzaSyA5XukOn9Ji2Bl-BEFw9l-UJl2D4TaLDhM)";
     document.getElementById('title1').innerHTML= landmarks[num].name;
   }
+
+//changes picture by pressing forward arrow  
 document.getElementById("forwardarrow").addEventListener("click",function(){
   if (itr == 0) {
       itr+=1;
@@ -228,6 +229,7 @@ document.getElementById("forwardarrow").addEventListener("click",function(){
   }
 });
 
+//changes picture by pressing back arrow
 document.getElementById("backwardarrow").addEventListener("click",function(){
   if (itr ==0) {
       changeImage(itr, newlandmarks);
