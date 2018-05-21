@@ -96,29 +96,6 @@ font-size: 80px;
 
 a{
   text-decoration: none;
-<<<<<<< HEAD
-=======
-
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
-}
-
-#logpage{
-  width: 35%;
-  background-color: white;
-  margin: auto;
-  padding-left:20px;
-  padding-right:20px;
-  padding-bottom:15px;
-  padding-top: 2px;
-  border-radius: 25px;
-  position: absolute;
-  right: 8%;
-  top:30%;
-<<<<<<< HEAD
-
-}
-
-=======
 }
 
 #logpage{
@@ -136,7 +113,6 @@ a{
 
 }
 
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
 #signpage{
   width: 35%;
   background-color: white;
@@ -195,28 +171,18 @@ body{
 .countryselect {
   position: absolute;
   display:inline-block;
-<<<<<<< HEAD
   left:4.5%;
   top:10%;
-=======
-  left:6%;
-  top:15%;
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
 }
 
 /*country search input*/
 #countrysearch {
-<<<<<<< HEAD
   width:41vw;
-=======
-  width:21vw;
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
   height:30px;
   top:15%;
 }
 
 #searchbutton {
-<<<<<<< HEAD
   height:30px;
   border-radius: 2px;
   background-color:white;
@@ -241,45 +207,13 @@ body{
   color:rgb(51,153,255);
 }
 
-=======
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-
-#searchbutton:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
-}
-
-#savedshow {
-  position:absolute;
-  right:-257%;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-
-#savedshow:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
-}
-
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
 /*the map*/
 
 #map {
   height: 70vh;
   width: 45vw;
-<<<<<<< HEAD
   top:16%;
   left:4.5%;
-=======
-  top:21%;
-  left:6%;
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
   position: absolute;
   box-shadow: 2px 2px 5px 5px #333333;
 }
@@ -290,7 +224,6 @@ body{
   position: absolute;
   height:60vh;
   width:40vw;
-<<<<<<< HEAD
   top: 16%;
   right:9%;
   border-style: solid;
@@ -309,33 +242,27 @@ body{
   border-style: solid;
   border-width: thick;
   background-size: cover;
-  background-color:rgba(0, 0, 0, 0.5);
+  display: block;
 }
 
 #forwardarrow{
   position: absolute;
   right:0px;
-  top:100px;
-  height: 100px;
-  width: 80px;
-  background-color: blue;
+  top:155px;
+  height: 45px;
+  width: 45px;
+  background-color:rgba(240, 236, 236, 0.7);
   display: inline-block;
 }
 
 #backwardarrow{
   position: absolute;
-  top:100px;
+  top:155px;
   left: 0px;
-  height: 100px;
-  width: 80px;
-  background-color: pink;
+  height: 45px;
+  width: 45px;
+  background-color:rgba(245, 236, 236, 0.7);
   display: block;
-=======
-  top: 21%;
-  right:6%;
-  background-size: cover;
-  box-shadow: 2px 2px 5px 5px #333333;
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
 }
 
 /*this is for the login page*/
@@ -391,12 +318,9 @@ body{
   position: absolute;
   height: 24%;
   width: 40vw;
-<<<<<<< HEAD
   border-style: solid;
   border-width: thick;
   border-color: #666666;
-=======
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
   background-color: rgba(0,0,0,0.7);
   box-shadow: 2px 2px 5px 5px #333333;
 }
@@ -405,7 +329,6 @@ body{
 .save {
   position: absolute;
   bottom: 10%;
-<<<<<<< HEAD
   right: 2.5%;
   display: block;
   border-radius: 2px;
@@ -415,19 +338,6 @@ body{
 
 .save:hover {
   color:rgb(51,153,255);
-=======
-  right: 2.3%;
-  display: block;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-
-.save:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
 }
 
 .text {
@@ -444,15 +354,11 @@ body{
   right: -1%;
   position: absolute;
   background-color: white;
-<<<<<<< HEAD
   border-width: thick;
   border-style: solid;
   border-color: #666666;
   box-shadow: 2px 2px 5px 5px #333333;
   background-color:rgba(255,255,255,1);
-=======
-  box-shadow: 0 0 3px 3px #333333;
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
   display: none;
 }
 
@@ -465,30 +371,9 @@ body{
 }
 
 #displaysaved {
-<<<<<<< HEAD
-=======
-  width:90%;
-  height:86.5%;
-  position:absolute;
-  top:2%;
-  left:0%;
-  right:0%;
-  margin:auto;
-  border-color: #666666;
-}
-
-#savedclose:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
-}
-
-#savedclose {
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
   width:90%;
   height:6%;
   position:absolute;
-<<<<<<< HEAD
   top:2%;
   left:0%;
   right:0%;
@@ -496,19 +381,6 @@ body{
   border-width: thick;
   border-style: solid;
   border-color: #666666;
-=======
-  bottom:3%;
-  left:5%;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-
-#savedclose:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
->>>>>>> f95c479db2dd0ac2035537da5f257541a694dd5e
 }
 
 #savedclose {
@@ -518,7 +390,7 @@ body{
   bottom:3%;
   left:5%;
   font-size: 13px;
-  border-radis: 2px;
+  border-radius: 2px;
   background-color:white;
   transition-duration: 0.2s;
 }
