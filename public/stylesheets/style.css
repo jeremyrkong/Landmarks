@@ -1,48 +1,47 @@
-
 ul.success li{
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #3c763d;
-	background-color: #dff0d8;
-	border-color: #d6e9c6;
-	list-style: none;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  list-style: none;
 }
-
+ 
 ul.error li{
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #a94442;
-	background-color: #f2dede;
-	border-color: #ebccd1;
-	list-style: none;
-
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  list-style: none;
+ 
 }
-
+ 
 form{
-	background-color: white;
-	padding: 10px;
+  background-color: white;
+  padding: 10px;
 }
-
-
-
+ 
+ 
+ 
 .astext {
   background:none;
   border:none;
   margin:0;
   padding:0;
 }
-
-
-
+ 
+ 
+ 
 .astext:hover{
   color: #1943B7;
   cursor: pointer;
 }
-
+ 
 .full-overlay{
   position: relative;
   z-index: 1;
@@ -51,7 +50,6 @@ form{
   padding:40px;
   background-size: cover;
 }
-
 
 /*         overlay styles */
 /*h1 {
@@ -73,7 +71,7 @@ font-weight: bold;
 font-size: 28px;
 left: 8%;
 }
-
+ 
 .main-text h1 {
 font-family: 'Montserrat', sans-serif;
 color: #ECE9E7;
@@ -83,8 +81,8 @@ font-size: 80px;
    -webkit-filter: brightness(29%);
     filter:brightness(29%);
 }
-
-
+ 
+ 
 .main-container{
   width: 450px;
   height: 200px;
@@ -93,12 +91,11 @@ font-size: 80px;
   margin: auto;
   background-color: #ccc;
 }
-
+ 
 a{
   text-decoration: none;
-
 }
-
+ 
 #logpage{
   width: 35%;
   background-color: white;
@@ -111,23 +108,9 @@ a{
   position: absolute;
   right: 8%;
   top:30%;
+ 
 }
-
-#logpage{
-  width: 35%;
-  background-color: white;
-  margin: auto;
-  padding-left:20px;
-  padding-right:20px;
-  padding-bottom:15px;
-  padding-top: 2px;
-  border-radius: 25px;
-  position: absolute;
-  right: 8%;
-  top:30%;
-
-}
-
+ 
 #signpage{
   width: 35%;
   background-color: white;
@@ -143,16 +126,16 @@ a{
 }
 
 body{
-/*	//background-image: url('https://hips.hearstapps.com/edc.h-cdn.co/assets/16/25/american-landmarks-mount-rushmore_1.jpg');
+/*  //background-image: url('https://hips.hearstapps.com/edc.h-cdn.co/assets/16/25/american-landmarks-mount-rushmore_1.jpg');
 */  
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://hips.hearstapps.com/edc.h-cdn.co/assets/16/25/american-landmarks-mount-rushmore_1.jpg');
-
-	background-repeat: no-repeat;
+ 
+  background-repeat: no-repeat;
   background-size: cover;
 }
-
-
-
+ 
+ 
+ 
 /*title*/
 #title {
   position: absolute;
@@ -160,7 +143,7 @@ body{
   left:35%;
   font-family:sans-serif;
 }
-
+ 
 #logoutbutton {
   position:absolute;
   padding:5px;
@@ -174,80 +157,114 @@ body{
   color:white;
   background-color:rgba(60,60,60,0.6);
 }
-
+ 
 #pagetitle {
   font-family: "Helvetica", Arial, sans-serif;
   font-size:350%;
   color:white;
   margin:30px;
 }
-
+ 
 /*select country div*/
 .countryselect {
   position: absolute;
   display:inline-block;
-  left:6%;
+  left:4.5%;
   top:15%;
 }
-
+ 
 /*country search input*/
 #countrysearch {
-  width:21vw;
+  width:41vw;
   height:30px;
   top:15%;
 }
-
+ 
 #searchbutton {
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  height:30px;
+  border-radius: 2px;
+  background-color:white;
+  transition-duration: 0.2s;
 }
-
+ 
 #searchbutton:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  color:rgb(51,153,255);
 }
-
+ 
 #savedshow {
+  width:125px;
+  height:30px;
   position:absolute;
-  right:-257%;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  right:-93%;
+  border-radius: 2px;
+  background-color:white;
+  transition-duration: 0.2s;
 }
-
+ 
 #savedshow:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  color:rgb(51,153,255);
 }
-
+ 
 /*the map*/
-
+ 
 #map {
   height: 70vh;
   width: 45vw;
-  top:21%;
-  left:6%;
+  top:16%;
+  left:4.5%;
   position: absolute;
   box-shadow: 2px 2px 5px 5px #333333;
 }
-
+ 
 /*the landmark picture that shows info */
-
+ 
 #countrypic {
   position: absolute;
   height:60vh;
   width:40vw;
-  top: 21%;
-  right:6%;
+  top: 16%;
+  right:9%;
+  border-style: solid;
+  border-width: thick;
   background-size: cover;
+  border-color: #666666;
   box-shadow: 2px 2px 5px 5px #333333;
 }
-
+ 
+#countrypicoptions {
+  position: absolute;
+  height:60vh;
+  width:40vw;
+  top: 16%;
+  right:9%;
+  border-style: solid;
+  border-width: thick;
+  background-size: cover;
+  display: block;
+}
+ 
+#forwardarrow{
+  position: absolute;
+  right:0px;
+  top:155px;
+  height: 45px;
+  width: 45px;
+  background-color:rgba(240, 236, 236, 0.7);
+  display: inline-block;
+}
+ 
+#backwardarrow{
+  position: absolute;
+  top:155px;
+  left: 0px;
+  height: 45px;
+  width: 45px;
+  background-color:rgba(245, 236, 236, 0.7);
+  display: block;
+}
+ 
 /*this is for the login page*/
-
+ 
 #loginbox {
   position: absolute;
   top:30%;
@@ -257,7 +274,7 @@ body{
   border-style: solid;
   border-width: thick;
 }
-
+ 
 #credentialsinfo {
   position: absolute;
   align-content: center;
@@ -266,67 +283,68 @@ body{
   height: 10%;
   left:35%;
 }
-
+ 
 .logins {
   border-style: solid;
   border-width: medium;
   height:5%;
 }
-
+ 
 #user {
   position:absolute;
   top:45%;
   left:20%;
 }
-
+ 
 #pass {
   position:absolute;
   top:45%;
   left:55%;
 }
-
+ 
 .loginbutton {
   position: absolute;
   top:80%;
   left:40%;
   width:15%;
 }
-
-
+ 
+ 
 #countryinfo {
   bottom: -27%;
   left: -0.8%;
   position: absolute;
   height: 24%;
   width: 40vw;
+  border-style: solid;
+  border-width: thick;
+  border-color: #666666;
   background-color: rgba(0,0,0,0.7);
   box-shadow: 2px 2px 5px 5px #333333;
 }
-
-
+ 
+ 
 .save {
   position: absolute;
   bottom: 10%;
-  right: 2.3%;
+  right: 2.5%;
   display: block;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  border-radius: 2px;
+  background-color:white;
+  transition-duration: 0.2s;
 }
-
+ 
 .save:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  color:rgb(51,153,255);
 }
-
+ 
 .text {
   position: absolute;
   bottom:30%;
   left: 23%;
   display: block;
 }
-
+ 
 #savedplaces {
   height: 50vh;
   width: 12vw;
@@ -334,10 +352,14 @@ body{
   right: -1%;
   position: absolute;
   background-color: white;
-  box-shadow: 0 0 3px 3px #333333;
+  border-width: thick;
+  border-style: solid;
+  border-color: #666666;
+  box-shadow: 2px 2px 5px 5px #333333;
+  background-color:rgba(255,255,255,1);
   display: none;
 }
-
+ 
 #savedemail {
   width:90%;
   position:absolute;
@@ -345,22 +367,18 @@ body{
   top:5%;
   left:5%;
 }
-
+ 
 #displaysaved {
   width:90%;
-  height:86.5%;
+  height:6%;
   position:absolute;
   top:2%;
   left:0%;
   right:0%;
   margin:auto;
+  border-width: thick;
+  border-style: solid;
   border-color: #666666;
-}
-
-#savedclose:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
 }
 
 #savedclose {
@@ -369,15 +387,10 @@ body{
   position:absolute;
   bottom:3%;
   left:5%;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-
-#savedclose:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  font-size: 13px;
+  border-radius: 2px;
+  background-color:white;
+  transition-duration: 0.2s;
 }
 
 .infotitle {

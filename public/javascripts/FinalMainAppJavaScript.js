@@ -1,5 +1,5 @@
 /*-------------------------MAP FUNCTIONS---------------------------------*/
-
+var itr=0;
 
         /**
  * [initializes the google map]
@@ -18,7 +18,7 @@
  * @param {[string]} marker  [the marker where you will be creating the info box]
  * @param {[string]} message [the description of the landmark]
  */
-        function addInfoWindow(marker, message) {
+        function addInfoWindow(marker, message, number) {
 
             var infoWindow = new google.maps.InfoWindow({
                 content: message
@@ -26,8 +26,9 @@
 
             google.maps.event.addListener(marker, 'click', function () {
                 infoWindow.open(map, marker);
+                changeImage(number,newlandmarks);
             });
-        }
+        }  
 
 /**
  *[Uses AJAX to grab your location from the googlemaps API then runs the functions]
@@ -39,7 +40,7 @@
             xhttp.onreadystatechange = function(){
                 if (this.readyState == 4 && this.status == 200) {
                     var jsonObj = JSON.parse(xhttp.responseText);
-                    var newlandmarks = getLandmarks(jsonObj);
+                    window.newlandmarks = getLandmarks(jsonObj);
                     var newlocations = getLocations(newlandmarks);
                     var centering = getZoomAndCenter(newlocations);
                     changeMap(centering,newlocations,newlandmarks)
@@ -47,6 +48,7 @@
         };
             xhttp.open("GET","https://maps.googleapis.com/maps/api/place/textsearch/json?query=point+of+interest+in+"+encodeURIComponent(newlocation)+"&key=AIzaSyA5XukOn9Ji2Bl-BEFw9l-UJl2D4TaLDhM", true);
             xhttp.send();
+            return 
     }
 
         /*--------------------------Finding and Placing Landmarks on the map------------------------------*/
@@ -58,13 +60,14 @@
             function getLandmarks(json){
                 var landmarks = [];
                 var Results = json.results;
+                
                 for (i=0; i < Results.length; i++) {
                     landmarks.push({
                     name: Results[i].name,
                     address: Results[i].formatted_address,
                     latitude: Results[i].geometry.location.lat,
                     longitude: Results[i].geometry.location.lng,
-                    photo: Results[i].photos
+                    photo: Results[i].photos[0].photo_reference
                 });
                 };
                 return landmarks}
@@ -185,7 +188,7 @@
                     animation: google.maps.Animation.DROP,
                     map: map
                 });
-                addInfoWindow(marker,"<p><b>" + landmarks[i].name + "</b></p><p>"+landmarks[i].address+"</p>")
+                addInfoWindow(marker,"<p><b>" + landmarks[i].name + "</b></p><p>"+landmarks[i].address+"</p>",i)
             };
         };
 /**
@@ -208,13 +211,46 @@ function check(entry, list) {
     };
 };
 
+//function that initializes image gallery and changes images based on arrow click
+function changeImage(num,landmarks){
+    document.getElementById('countrypic').style.backgroundImage = "url(https://maps.googleapis.com/maps/api/place/photo?maxheight=1600&photoreference=" + landmarks[num].photo + "&key=AIzaSyA5XukOn9Ji2Bl-BEFw9l-UJl2D4TaLDhM)";
+    document.getElementById('title1').innerHTML= landmarks[num].name;
+  }
+
+//changes picture by pressing forward arrow
+function ScrollPicsForward(){
+  if (itr == 0) {
+      itr+=1;
+      changeImage(itr, newlandmarks);
+  } else if (itr>0) {
+      itr+=1;
+      changeImage(itr, newlandmarks);
+  }
+}; 
+
+function ScrollPicsBackward(){
+    if (itr ==0) {
+      changeImage(itr, newlandmarks);
+    } else if (itr>0){
+      itr-=1;
+      changeImage(itr, newlandmarks);
+    }
+}
+
+
 module.exports = {
   initMap,
   addInfoWindow,
   loadDoc,
   getLandmarks,
+  getLocations,
+  getZoomAndCenter,
+  changeMap,
+  changeImage,
+  ScrollPicsForward,
+  ScrollPicsBackward,
   check
 }
-        //  document.getElementById('searchbutton').addEventListener('click', function() {
-        //     loadDoc();
-        // });
+ // document.getElementById('searchbutton').addEventListener('click', function() {
+ //    loadDoc();
+ // });
