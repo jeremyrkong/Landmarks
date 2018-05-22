@@ -14,10 +14,10 @@ block content
       button#backwardarrow(onclick='ScrollPicsBackward()') ⇦
       #countryinfo
         h2#title1.infotitle
-        button#save1.save Save
+        input.btn.save(type='submit',name='submit',value='Save')
       #savedplaces
         #displaysaved
-        button#savedclose Close
+        input.btn#savedclose(type='submit',name='submit',value='Close')
       script(src='/javascripts/FinalMainAppJavaScript.js')
       script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBGT9DtN2cOFyQW8CY5GD7cHYbeWsBoox8&callback=initMap')
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
