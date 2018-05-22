@@ -18,7 +18,7 @@ var itr=0;
  * @param {[string]} marker  [the marker where you will be creating the info box]
  * @param {[string]} message [the description of the landmark]
  */
-        function addInfoWindow(marker, message) {
+        function addInfoWindow(marker, message, number) {
 
             var infoWindow = new google.maps.InfoWindow({
                 content: message
@@ -26,15 +26,16 @@ var itr=0;
 
             google.maps.event.addListener(marker, 'click', function () {
                 infoWindow.open(map, marker);
+                changeImage(number,newlandmarks);
             });
-        }
+        }  
 
 /**
  *[Uses AJAX to grab your location from the googlemaps API then runs the functions]
  * @return {[none]} [Does not return anything]
  */
         function loadDoc(){ // Load up the API and place everything on the map properly
-            var newlocation = document.getElementById('SearchBar').value;
+            var newlocation = document.getElementById('countrysearch').value;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function(){
                 if (this.readyState == 4 && this.status == 200) {
@@ -187,7 +188,7 @@ var itr=0;
                     animation: google.maps.Animation.DROP,
                     map: map
                 });
-                addInfoWindow(marker,"<p><b>" + landmarks[i].name + "</b></p><p>"+landmarks[i].address+"</p>")
+                addInfoWindow(marker,"<p><b>" + landmarks[i].name + "</b></p><p>"+landmarks[i].address+"</p>",i)
             };
         };
 /**
@@ -216,8 +217,8 @@ function changeImage(num,landmarks){
     document.getElementById('title1').innerHTML= landmarks[num].name;
   }
 
-//changes picture by pressing forward arrow  
-document.getElementById("forwardarrow").addEventListener("click",function(){
+//changes picture by pressing forward arrow
+function ScrollPicsForward(){
   if (itr == 0) {
       itr+=1;
       changeImage(itr, newlandmarks);
@@ -225,17 +226,16 @@ document.getElementById("forwardarrow").addEventListener("click",function(){
       itr+=1;
       changeImage(itr, newlandmarks);
   }
-});
+}; 
 
-//changes picture by pressing back arrow
-document.getElementById("backwardarrow").addEventListener("click",function(){
-  if (itr ==0) {
+function ScrollPicsBackward(){
+    if (itr ==0) {
       changeImage(itr, newlandmarks);
-  } else if (itr>0){
+    } else if (itr>0){
       itr-=1;
       changeImage(itr, newlandmarks);
-  }
-});
+    }
+}
 
 
 module.exports = {
@@ -243,8 +243,14 @@ module.exports = {
   addInfoWindow,
   loadDoc,
   getLandmarks,
+  getLocations,
+  getZoomAndCenter,
+  changeMap,
+  changeImage,
+  ScrollPicsForward,
+  ScrollPicsBackward,
   check
 }
- document.getElementById('searchbutton').addEventListener('click', function() {
-    loadDoc();
- });
+ // document.getElementById('searchbutton').addEventListener('click', function() {
+ //    loadDoc();
+ // });
